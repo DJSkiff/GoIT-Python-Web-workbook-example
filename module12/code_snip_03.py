@@ -6,14 +6,14 @@ import asyncio
 async def main():
 
     session = aiohttp.ClientSession()
-    async with session.get('http://python.org', ssl=False) as response:
+    response = await session.get('http://python.org', ssl=False)
 
-        print("Status:", response.status)
-        print("Content-type:", response.headers['content-type'])
+    print("Status:", response.status)
+    print("Content-type:", response.headers['content-type'])
 
-        html = await response.text()
-        response.close()
-        print("Body:", html[:15], "...")
+    html = await response.text()
+    response.close()
+    print("Body:", html[:15], "...")
     await session.close()
 
 
