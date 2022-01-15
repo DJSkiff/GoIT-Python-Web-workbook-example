@@ -4,7 +4,7 @@ from uuid import uuid4
 
 
 async def main():
-    timeout = aiohttp.ClientTimeout(total=50)
+    timeout = aiohttp.ClientTimeout(total=1)
     async with aiohttp.ClientSession(
         headers={"Request-Id": str(uuid4())}, 
         timeout=timeout,
@@ -20,5 +20,5 @@ async def main():
 
 if __name__ == "__main__":
     '''For Windows environment uncomment next row'''
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())

@@ -17,5 +17,5 @@ async def main():
 
 if __name__ == "__main__":
     '''For Windows environment uncomment next row'''
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
